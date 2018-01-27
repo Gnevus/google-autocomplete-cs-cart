@@ -11,7 +11,6 @@
 */
 
 <script type="text/javascript"  class="cm-ajax-force">
-
         Tygh.$("[name='user_data[city]']").autocomplete({$ldelim}
             source: function( request, response ) {$ldelim}
                 var state_google, state_short;
