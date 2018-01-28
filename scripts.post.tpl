@@ -1,4 +1,4 @@
-<script src="//maps.googleapis.com/maps/api/js?key=AIzaSyAC7WkXrEfoGKEX6vHRinXiXksZrO9kOME&libraries=places&language={$smarty.const.CART_LANGUAGE|fn_cp_cities_google_langs}" type="text/javascript"></script>
+<script src="//maps.googleapis.com/maps/api/js?key=AIzaSyAC7WkXrEfoGKEX6vHRinXiXksZrO9kOME&libraries=places&language={$smarty.const.CART_LANGUAGE|fn_a_cities_google_langs}" type="text/javascript"></script>
 
 /*
     @airoo
@@ -23,7 +23,7 @@
                 check_country = $("[name='user_data[country]']").val();
                 check_state = $("[name='user_data[state]']").val();
                 if (request.term.length < 1) {$ldelim}
-                $.ceAjax('request', fn_url('cp_city.autocomplete_city?q=' + request.term + '&check_state=' + check_state + '&check_country=' + check_country), {$ldelim}
+                $.ceAjax('request', fn_url('a_city.autocomplete_city?q=' + request.term + '&check_state=' + check_state + '&check_country=' + check_country), {$ldelim}
                     callback: function(data) {$ldelim}
                         response(data.autocomplete);
                     {$rdelim}
@@ -43,7 +43,7 @@
                     }, _this.callback);
                     });
                     
-                    $.ceAjax('request', fn_url('cp_city.get_state?state=' + check_state), {$ldelim}
+                    $.ceAjax('request', fn_url('a_city.get_state?state=' + check_state), {$ldelim}
                         callback: function(data) {$ldelim}
                                 state_google = data.state_google[0];
                                 state_short = data.state_short;
@@ -75,7 +75,7 @@
                 var check_state;
                 check_country = $("[name='user_data[country]']").val();
                 check_state = $("[name='user_data[state]']").val();
-                $.ceAjax('request', fn_url('cp_city.save_city?adr_from_google=' + ui.item.value + '&check_state=' + check_state + '&check_country=' + check_country), {$ldelim}
+                $.ceAjax('request', fn_url('a_city.save_city?adr_from_google=' + ui.item.value + '&check_state=' + check_state + '&check_country=' + check_country), {$ldelim}
                     callback: function(data) {$ldelim}
 
                     {$rdelim}
